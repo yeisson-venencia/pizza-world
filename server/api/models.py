@@ -68,3 +68,11 @@ class Ingredient(models.Model):
 
     class Meta:
         db_table = 'ingredient'
+
+class Ingredient_History(models.Model):
+    price = models.FloatField()
+    start_date = models.DateTimeField(auto_now=False, auto_now_add=True)
+    start_date = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True, null=True, default=None)
+
+    class Meta:
+        db_table = 'ingredient_history'
