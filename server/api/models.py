@@ -102,3 +102,9 @@ class Order(models.Model):
 
     class Meta:
         db_table: 'order'
+
+class Pizza(models.Model):
+    size = models.ForeignKey(SizeHistory, on_delete=models.CASCADE, related_name='pizza_size_of')
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='pizza_order_of')
+    class Meta:
+        db_table = 'pizza'
