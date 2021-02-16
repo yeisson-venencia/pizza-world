@@ -2,10 +2,16 @@ from django.db import models
 
 # Create your models here.
 
+class Status(models.TextChoices):
+    ACTIVE = 'Active'
+    BLOCKED = 'Blocked'
+    DELETED = 'Deleted'
+
 class Role(models.Model):
     name = models.CharField(max_lenght=50)
     creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
+    status = models.CharField(max_lenght=10, choices=Status.choices, default=Status.ACTIVE)
 
     class Meta:
         db_table = 'role'
@@ -15,6 +21,7 @@ class Customer(models.Model):
     password = models.CharField(max_lenght=100)
     creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
+    status = models.CharField(max_lenght=10, choices=Status.choices, default=Status.ACTIVE)
 
     class Meta:
         db_table = 'customer'
@@ -40,6 +47,7 @@ class Receptor(models.Model):
     creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
     customer = models.ForeignKey(Customer,related_name='receptor_of', on_delete=models.CASCADE)
+    status = models.CharField(max_lenght=10, choices=Status.choices, default=Status.ACTIVE)
 
     class Meta:
         db_table = 'receptor'
@@ -48,12 +56,14 @@ class Size(models.Model):
     name = models.CharField(max_lenght=100)
     creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
+    status = models.CharField(max_lenght=10, choices=Status.choices, default=Status.ACTIVE)
 
     class Meta:
         db_table = 'size'
 
-class Size_History(models.Model):
+class SizeHistory(models.Model):
     price = models.FloatField()
+    size = models.ForeignKey(Size, on_delete=models.CASCADE, related_name='price_of')
     start_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     start_date = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True, null=True, default=None)
 
@@ -65,14 +75,30 @@ class Ingredient(models.Model):
     name = models.CharField(max_lenght=100)
     creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
+    status = models.CharField(max_lenght=10, choices=Status.choices, default=Status.ACTIVE)
 
     class Meta:
         db_table = 'ingredient'
 
-class Ingredient_History(models.Model):
+class IngredientHistory(models.Model):
     price = models.FloatField()
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name='price_of')
     start_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     start_date = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True, null=True, default=None)
 
     class Meta:
         db_table = 'ingredient_history'
+
+class Order(models.Model):
+    class OrderStatus():
+        CREATED = 'Created'
+        PAYED = 'Payed'
+        DELIVERED = 'Delivered'
+    
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='order_of')
+    receptor = models.ForeignKey(Receptor, on_delete=models.CASCADE, related_name='order_to', blank=True, null=True)
+    creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
+    status = models.CharField(max_lenght=10, choices=OrderStatus.choices, default=OrderStatus.CREATED)
+
+    class Meta:
+        db_table: 'order'
