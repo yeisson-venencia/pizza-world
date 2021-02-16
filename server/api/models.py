@@ -17,7 +17,7 @@ class Role(models.Model):
         db_table = 'role'
 
 class Customer(models.Model):
-    email = models.CharField(max_lenght=100, unique=True)
+    email = models.EmailField(max_lenght=100, unique=True)
     password = models.CharField(max_lenght=100)
     creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
@@ -106,5 +106,11 @@ class Order(models.Model):
 class Pizza(models.Model):
     size = models.ForeignKey(SizeHistory, on_delete=models.CASCADE, related_name='pizza_size_of')
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='pizza_order_of')
+    ingredients = models.ManyToManyField(IngredientHistory, through='Ration')
     class Meta:
         db_table = 'pizza'
+
+class Ration(models.Model):
+    quantity = models.IntegerField()
+    ingredient_price = models.ForeignKey(IngredientHistory, on_delete=models.CASCADE)
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
