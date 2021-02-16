@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>HOME PAGE</h1>
+    <v-img src="../assets/home_main.jpg" max-height="550"> </v-img>
   </div>
 </template>
 
