@@ -51,3 +51,11 @@ class Size(models.Model):
 
     class Meta:
         db_table = 'size'
+
+class Ingredient(models.Model):
+    name = models.CharField(max_lenght=100)
+    creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
+
+    class Meta:
+        db_table = 'ingredient'
