@@ -1,17 +1,17 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark> </v-app-bar>
+    <the-nav></the-nav>
 
     <v-main> </v-main>
   </v-app>
 </template>
 
 <script>
+import TheNav from "./components/common/TheNav";
 export default {
   name: "App",
-
-  data: () => ({
-    //
-  }),
+  components: {
+    "the-nav": TheNav,
+  },
 };
 </script>
