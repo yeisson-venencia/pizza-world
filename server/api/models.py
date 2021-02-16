@@ -42,4 +42,12 @@ class Receptor(models.Model):
     customer = models.ForeignKey(Customer,related_name='receptor_of', on_delete=models.CASCADE)
 
     class Meta:
-        db_table = 'receptor'   
+        db_table = 'receptor'
+
+class Size(models.Model):
+    name = models.CharField(max_lenght=100)
+    creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
+
+    class Meta:
+        db_table = 'size'
