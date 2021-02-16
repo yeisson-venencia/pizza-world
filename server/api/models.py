@@ -90,7 +90,7 @@ class IngredientHistory(models.Model):
         db_table = 'ingredient_history'
 
 class Order(models.Model):
-    class OrderStatus():
+    class OrderStatus(models.TextChoices):
         CREATED = 'Created'
         PAYED = 'Payed'
         DELIVERED = 'Delivered'
