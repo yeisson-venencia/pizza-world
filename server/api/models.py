@@ -11,7 +11,7 @@ class Role(models.Model):
         db_table = 'role'
 
 class Customer(models.Model):
-    email = models.CharField(max_lenght=100)
+    email = models.CharField(max_lenght=100, unique=True)
     password = models.CharField(max_lenght=100)
     creation_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True, auto_now_add=True)
@@ -51,6 +51,15 @@ class Size(models.Model):
 
     class Meta:
         db_table = 'size'
+
+class Size_History(models.Model):
+    price = models.FloatField()
+    start_date = models.DateTimeField(auto_now=False, auto_now_add=True)
+    start_date = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True, null=True, default=None)
+
+    class Meta:
+        db_table = 'size_history'
+
 
 class Ingredient(models.Model):
     name = models.CharField(max_lenght=100)
