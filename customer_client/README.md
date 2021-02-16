@@ -1,4 +1,4 @@
-# web_client
+# customer_client
 
 ## Project setup
 ```
