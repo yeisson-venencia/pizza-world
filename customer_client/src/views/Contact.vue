@@ -1,5 +1,5 @@
 <template>
-  <div>
-    <h2>contact section</h2>
-  </div>
+  <v-row id="contact" class="home-container">
+    <p>Contact section</p>
+  </v-row>
 </template>
