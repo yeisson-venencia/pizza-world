@@ -4,22 +4,25 @@
     align="center"
     justify="space-around"
   >
-    <v-card
-      color="grey"
-      max-width="375"
+    <product-card
       v-for="product in products"
       :key="product.title"
+      :image="resolve_img_url(product.imagePath)"
+      :title="product.title"
+      :subtitle="product.subtitle"
+      :text="product.text"
     >
-      <v-img height="300" :src="resolve_img_url(product.imagePath)"></v-img>
-      <v-card-title>{{ product.title }}</v-card-title>
-      <v-card-subtitle> {{ product.subtitle }}</v-card-subtitle>
-      <v-card-text>{{ product.text }}</v-card-text>
-    </v-card>
+    </product-card>
   </v-row>
 </template>
 
 <script>
+import ProductCard from "./ProductCard";
+
 export default {
+  components: {
+    "product-card": ProductCard,
+  },
   data() {
     return {
       products: [
@@ -55,7 +58,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../styles/main.scss";
-.products-container {
-  background-color: rgb(244, 140, 6, 0.4);
-}
 </style>
