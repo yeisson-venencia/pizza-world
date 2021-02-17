@@ -1,23 +1,16 @@
 <template>
-  <div>
-    <welcome-section></welcome-section>
-    <product-section></product-section>
-    <contact-section></contact-section>
-  </div>
+  <v-row class="home-container welcome-container">
+    <v-col class="home-col" align="center">
+      <v-row class="home-message-container" align="center">
+        <v-col class="home-slogan">
+          <h1>THE ONLY PLACE IN THE WORLD</h1>
+          <h2>"... with the best taste in the Pizza!!!"</h2>
+        </v-col>
+      </v-row>
+    </v-col>
+  </v-row>
 </template>
 
-<script>
-// @ is an alias to /src
-import WelcomeSection from "./../components/home/WelcomeSection";
-import ProductSection from "./../components/home/ProductSection";
-import ContactSection from "./../components/home/ContactSection";
-
-export default {
-  name: "Home",
-  components: {
-    "welcome-section": WelcomeSection,
-    "product-section": ProductSection,
-    "contact-section": ContactSection,
-  },
-};
-</script>
+<style lang="scss" scoped>
+/* @import "../../styles/main.scss"; */
+</style>
