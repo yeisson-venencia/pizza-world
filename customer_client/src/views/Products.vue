@@ -5,7 +5,7 @@
     justify="space-around"
     id="product"
   >
-    <product-card
+    <!-- <product-card
       v-for="product in products"
       :key="product.title"
       :image="resolve_img_url(product.imagePath)"
@@ -13,17 +13,17 @@
       :subtitle="product.subtitle"
       :text="product.text"
     >
-    </product-card>
+    </product-card> -->
   </v-row>
 </template>
 
 <script>
-import ProductCard from "./ProductCard";
+/* import ProductCard from "../components/products/ProductCard"; */
 
 export default {
-  components: {
+  /*  components: {
     "product-card": ProductCard,
-  },
+  }, */
   data() {
     return {
       products: [
@@ -50,13 +50,9 @@ export default {
   },
   methods: {
     resolve_img_url(path) {
-      const images = require.context("../../assets", false, /\.png$|\.jpg$/);
+      const images = require.context("../assets", false, /\.png$|\.jpg$/);
       return images("./" + path);
     },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-/* @import "../../styles/main.scss"; */
-</style>

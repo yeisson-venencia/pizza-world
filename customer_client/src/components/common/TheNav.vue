@@ -24,7 +24,7 @@ export default {
     return {
       views: [
         { link: "/", label: "Home" },
-        { link: "/product", label: "Products" },
+        { link: "/products", label: "Products" },
         { link: "/about", label: "About" },
         { link: "/contact", label: "Contact us" },
         { link: "/order", label: "Order" },
