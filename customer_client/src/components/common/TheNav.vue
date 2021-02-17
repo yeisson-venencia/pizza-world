@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="red" dark>
+  <v-app-bar app class="navbar-color">
     <v-img src="../../assets/pizza_world_logo_text.png" max-width="160"></v-img>
     <v-spacer></v-spacer>
     <v-row>
@@ -32,3 +32,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import "../../styles/main.scss";
+</style>
