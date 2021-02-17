@@ -5,7 +5,7 @@
     justify="space-around"
     id="product"
   >
-    <!-- <product-card
+    <product-card
       v-for="product in products"
       :key="product.title"
       :image="resolve_img_url(product.imagePath)"
@@ -13,17 +13,17 @@
       :subtitle="product.subtitle"
       :text="product.text"
     >
-    </product-card> -->
+    </product-card>
   </v-row>
 </template>
 
 <script>
-/* import ProductCard from "../components/products/ProductCard"; */
+import ProductCard from "../components/products/ProductCard";
 
 export default {
-  /*  components: {
+  components: {
     "product-card": ProductCard,
-  }, */
+  },
   data() {
     return {
       products: [
