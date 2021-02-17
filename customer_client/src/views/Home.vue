@@ -10,7 +10,3 @@
     </v-col>
   </v-row>
 </template>
-
-<style lang="scss" scoped>
-/* @import "../../styles/main.scss"; */
-</style>
