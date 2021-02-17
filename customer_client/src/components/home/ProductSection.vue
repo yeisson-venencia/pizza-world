@@ -1,6 +1,15 @@
 <template>
-  <v-row class="home-container" align="center" justify="space-around">
-    <v-card max-width="374" v-for="product in products" :key="product.title">
+  <v-row
+    class="home-container products-container"
+    align="center"
+    justify="space-around"
+  >
+    <v-card
+      color="grey"
+      max-width="374"
+      v-for="product in products"
+      :key="product.title"
+    >
       <v-img height="300" :src="resolve_img_url(product.imagePath)"></v-img>
       <v-card-title>{{ product.title }}</v-card-title>
       <v-card-subtitle> {{ product.subtitle }}</v-card-subtitle>
