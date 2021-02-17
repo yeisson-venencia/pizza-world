@@ -1,5 +1,5 @@
 <template>
-  <v-row class="home-container">
+  <v-row class="home-container welcome-container">
     <v-col class="home-col" align="center">
       <v-row class="home-message-container" align="center">
         <v-col class="home-slogan">

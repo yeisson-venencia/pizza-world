@@ -1,11 +1,14 @@
 .home-container {
+  margin: 0;
+  height: 546px;
+  width: 100%;
+}
+
+.welcome-container {
   background-image: url("../../assets/home_main.jpg");
   background-position: bottom;
-  margin: 0;
   background-size: cover;
-  height: 546px;
   font-size: 22px;
-  width: 100%;
 }
 
 .home-col {
