@@ -1,0 +1,24 @@
+.home-container {
+  background-image: url("../../assets/home_main.jpg");
+  background-position: bottom;
+  margin: 0;
+  background-size: cover;
+  height: 546px;
+  font-size: 22px;
+  width: 100%;
+}
+
+.home-col {
+  background: rgb(20, 24, 19, 0.6);
+}
+
+.home-message-container {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.home-slogan {
+  color: rgb(236, 234, 234);
+  font-size: 150%;
+}
