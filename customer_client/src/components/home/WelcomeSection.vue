@@ -12,5 +12,5 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../../styles/main.scss";
+/* @import "../../styles/main.scss"; */
 </style>

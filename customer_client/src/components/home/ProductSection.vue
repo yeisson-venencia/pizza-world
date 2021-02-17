@@ -3,6 +3,7 @@
     class="home-container products-container"
     align="center"
     justify="space-around"
+    id="product"
   >
     <product-card
       v-for="product in products"
@@ -57,5 +58,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/main.scss";
+/* @import "../../styles/main.scss"; */
 </style>
