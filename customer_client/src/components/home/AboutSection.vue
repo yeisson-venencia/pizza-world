@@ -19,8 +19,21 @@
         justify="space-around"
       >
         <div class="about-image about-image-message"></div>
-        <div class="about-image about-image-logo"></div>
-        <div class="about-image"></div>
+        <div class="about-image about-image-logo">
+          <v-img
+            src="../../assets/pizza_world_logo.png"
+            width="100%"
+            height="100%"
+          ></v-img>
+        </div>
+        <div class="about-image">
+          <v-img
+            src="../../assets/share_pizza.jpg"
+            width="100%"
+            height="100%"
+            class="about-image-share"
+          ></v-img>
+        </div>
       </v-row>
     </v-col>
   </v-row>
@@ -28,8 +41,18 @@
 
 <style lang="scss" scoped>
 @import "../../styles/main.scss";
+.about-image-message {
+  background-color: $pink-red;
+}
+.about-image-logo {
+  background-color: $orange;
+}
+.about-image-share {
+  border-radius: 15px;
+}
+
 .about-container {
-  background-color: #e0e0e0;
+  background-color: $grey;
 }
 
 .column-container {
@@ -38,18 +61,18 @@
 }
 
 .about-text-container {
-  height: 40%;
+  height: 30%;
 }
 
 .about-images-container {
   background-color: white;
-  height: 60%;
+  height: 70%;
+  border-radius: 15px;
 }
 
 .about-image {
-  background-color: $success-color;
   width: 25%;
-  height: 90%;
+  height: 80%;
   border-radius: 12px;
 }
 </style>
