@@ -53,10 +53,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../../styles/main.scss";
 .products-container {
   background-color: rgb(244, 140, 6, 0.4);
-  margin: 0;
-  margin-top: 0;
 }
 </style>
