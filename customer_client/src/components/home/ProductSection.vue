@@ -6,7 +6,7 @@
   >
     <v-card
       color="grey"
-      max-width="374"
+      max-width="375"
       v-for="product in products"
       :key="product.title"
     >
