@@ -10,29 +10,9 @@
       <v-row aligh="center" justify="center">
         <v-col class="text-contaniner" align="center">
           <v-textarea auto-grow filled rows="6" row-height="20"></v-textarea>
-          <v-btn class="full-width">Send suggestion</v-btn>
+          <v-btn class="full-width" color="success">Send suggestion</v-btn>
         </v-col>
       </v-row>
     </v-col>
   </v-row>
 </template>
-
-<style lang="scss">
-.contact-container {
-  background-color: #e0e0e0;
-}
-.contact-info-container {
-  max-width: 60%;
-  height: 100%;
-  background-color: white;
-  padding-top: 7%;
-}
-
-.text-contaniner {
-  max-width: 70%;
-}
-
-.full-width {
-  width: 100%;
-}
-</style>
