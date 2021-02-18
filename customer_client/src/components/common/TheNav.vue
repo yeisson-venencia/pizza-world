@@ -1,6 +1,11 @@
 <template>
   <v-app-bar app class="navbar-color">
-    <v-img src="../../assets/pizza_world_logo_text.png" max-width="160"></v-img>
+    <v-img
+      src="../../assets/pizza_world_logo_text.png"
+      max-width="160"
+      @click="go_home()"
+      class="logo-pointer"
+    ></v-img>
     <v-spacer></v-spacer>
     <v-row>
       <v-btn
@@ -14,7 +19,7 @@
       </v-btn>
     </v-row>
     <v-spacer> </v-spacer>
-    <v-btn>Log In</v-btn>
+    <v-btn plain color="black"><h2>Log in</h2></v-btn>
   </v-app-bar>
 </template>
 
@@ -30,6 +35,11 @@ export default {
         { link: "/order", label: "Order" },
       ],
     };
+  },
+  methods: {
+    go_home() {
+      this.$router.push("/");
+    },
   },
 };
 </script>
